@@ -30,8 +30,8 @@ pipeline {
       }
      stage('deploying war file to tomcat') {
        steps {
-         sh 'rm -rf*'
-         sh 'cp /var/lib/jenkins/workspace /opt/apache-tomcat-8.5.90/webapps'
+         sh 'rm -rf *'
+         sh 'scp /var/lib/jenkins/workspace/demo-jfrog/hello-world-war/target/hello-world-war-1.0.1.war root@ip-172-31-22-75:/opt/apache-tomcat-8.5.90/webapps'
        }
     }
   }
