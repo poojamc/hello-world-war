@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('checkout') {
        steps {
-         sh'rm -rf *'
+         sh 'rm -rf *'
          sh 'git clone https://github.com/poojamc/hello-world-war.git'
        }
     }
@@ -30,7 +30,7 @@ pipeline {
       }
      stage('deploying war file to tomcat') {
        steps {
-         sh'rm -rf*'
+         sh 'rm -rf*'
          sh 'cp /var/lib/jenkins/workspace /opt/apache-tomcat-8.5.90/webapps'
        }
     }
