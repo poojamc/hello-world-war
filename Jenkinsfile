@@ -17,14 +17,15 @@ pipeline {
           rtUpload ( 
             serverId: 'my-artifactory', 
             spec: '''{ 
-              "files": [ 
-                { 
-                  "pattern": "*.war", 
-                  "target": "example-repo-local/"
+                "files": [ 
+                    { 
+                        "pattern": "*.war", 
+                        "target": "example-repo-local/"
             } 
             ] 
             }'''
           )	
-        }	}
+        }
+      }
   }
 }
