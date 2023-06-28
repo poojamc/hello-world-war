@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  
   stages {
     stage('checkout') {
        steps {
@@ -27,5 +28,10 @@ pipeline {
           )	
         }
       }
+     stage('deploying war file to tomcat') {
+       steps {
+         sh 'cp /var/lib/jenkins/workspace /opt/apache-tomcat-8.5.90/webapps'
+       }
+    }
   }
 }
