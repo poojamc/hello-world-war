@@ -10,7 +10,7 @@ pipeline {
     }
       stage('build') {
        steps {
-         sh 'echo building the code'
+         sh 'mvn package'
        }
     }
       stage('Push artifacts into artifactory') { 
@@ -30,6 +30,7 @@ pipeline {
       }
      stage('deploying war file to tomcat') {
        steps {
+         sh'rm -rf*'
          sh 'cp /var/lib/jenkins/workspace /opt/apache-tomcat-8.5.90/webapps'
        }
     }
