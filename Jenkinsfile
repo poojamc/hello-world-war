@@ -1,10 +1,8 @@
 pipeline {
   agent any
-  
   stages {
     stage('checkout') {
        steps {
-       
          sh 'rm -rf hello-world-war'
          sh 'git clone https://github.com/poojamc/hello-world-war.git'
        }
@@ -16,18 +14,18 @@ pipeline {
     }
       stage('Push artifacts into artifactory') { 
         steps { 
-          rtUpload ( 
-            serverId: 'my-artifactory', 
-            spec: '''{ 
-                "files": [ 
-                    { 
-                        "pattern": "*.war", 
-                        "target": "example-repo-local/"
-            } 
-            ] 
-            }'''
-          )	
-        }
+            rtUpload ( 
+                 serverId: 'my-artifactory', 
+                 spec: '''{ 
+                     "files": [ 
+                         { 
+                               "pattern": "*.war", 
+                               "target": "example-repo-local/"
+                         } 
+                              ] 
+                          }'''
+                       )	
+               }
       }
      stage('deploying war file to tomcat') {
        steps {
