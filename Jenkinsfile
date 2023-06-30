@@ -30,7 +30,7 @@ pipeline {
      stage('deploying war file to tomcat') {
        steps {
         
-         sh 'sudo cp /var/lib/jenkins/workspace/demo-jfrog/target/hello-world-war-1.0.1.war  /opt/apache-tomcat-8.5.90/webapps'
+         sh 'sudo -s cp /var/lib/jenkins/workspace/demo-jfrog/target/hello-world-war-1.0.1.war  /opt/apache-tomcat-8.5.90/webapps'
        }
     }
   }
