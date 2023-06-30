@@ -29,7 +29,7 @@ pipeline {
       }
      stage('deploying war file to tomcat') {
        steps {
-         sh 'cp /home/slave2/workspace/demo-pipe/target/hello-world-war-1.0.3.war  /opt/apache-tomcat-8.5.90/webapps'
+         sh 'cp /home/slave2/workspace/demo-pipe/target/hello-world-war-1.0.0.war  /opt/apache-tomcat-8.5.90/webapps'
        }
     }
   }
